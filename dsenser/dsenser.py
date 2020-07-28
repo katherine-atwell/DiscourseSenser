@@ -19,7 +19,7 @@ from dsenser.constants import ARG1, ARG2, CHAR_SPAN, CONNECTIVE, ENCODING, \
 from dsenser.utils import timeit
 
 from collections import Iterable
-from cPickle import dump, load
+from pickle import dump, load
 from itertools import chain
 
 import codecs

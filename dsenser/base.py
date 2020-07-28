@@ -10,7 +10,8 @@
 from __future__ import absolute_import, print_function
 
 from dsenser.constants import POS, SNT_ID, TOK_IDX, TOK_ID, TOK_LIST, WORDS
-from dsenser.scorer.conn_head_mapper import ConnHeadMapper
+#from dsenser.scorer.conn_head_mapper import ConnHeadMapper
+from dsenser.conll16st.conn_head_mapper import ConnHeadMapper
 from dsenser.resources import CHM
 from dsenser.utils import is_explicit
 

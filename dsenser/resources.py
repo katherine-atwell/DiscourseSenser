@@ -23,7 +23,8 @@ from __future__ import absolute_import, print_function
 
 from dsenser.constants import ENCODING, DFLT_BROWN_PATH, DFLT_ECONN_PATH, \
     DFLT_INQUIRER_PATH, DFLT_LCSI_PATH, DFLT_MPQA_PATH, DFLT_W2V_PATH
-from dsenser.scorer.conn_head_mapper import ConnHeadMapper
+#from dsenser.scorer.conn_head_mapper import ConnHeadMapper
+from dsenser.conll16st.conn_head_mapper import ConnHeadMapper
 
 from collections import defaultdict
 from nltk.stem.porter import PorterStemmer
@@ -212,7 +213,7 @@ def load_MPQA(a_fname):
                          if EQ_RE.search(iword))
             ret[attrs[WORD1]] = (attrs[POL], attrs[INTENS], attrs[POS])
     # convert defaultdict back to the normal one
-    return dict(ret.iteritems())
+    return dict(ret.items())
 
 
 def load_W2V(a_fname):
@@ -329,7 +330,7 @@ for iconn in CONNS:
         itok = ipart[0]
         CONNTOK2CONN[itok].append((i, iconn))
 
-for iconns in CONNTOK2CONN.itervalues():
+for iconns in CONNTOK2CONN.values():
     iconns.sort(key=lambda el: el[0])
 
 CONNTOKS = set(CONNTOK2CONN.keys())
